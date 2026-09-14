@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #102c46,
+            #03070d 60%,
+            #000
+        );
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow: hidden;
+}
+
+/* ---------------------------------
+   Instagram 3:4 canvas
+---------------------------------- */
+
+.instagram-frame {
+
+    position: relative;
+
+    width: min(100vw, 810px);
+
+    aspect-ratio: 3 / 4;
+
+    overflow: hidden;
+
+    background: #02070d;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 30px rgba(0, 180, 255, .25),
+        0 0 90px rgba(0, 0, 0, .9);
+}
+
+
+/* Canvas */
+
+#tunnelCanvas {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ---------------------------------
+   Header
+---------------------------------- */
+
+.title {
+
+    position: absolute;
+
+    z-index: 5;
+
+    width: 100%;
+
+    top: 28px;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: clamp(
+        18px,
+        4vw,
+        34px
+    );
+
+    font-weight: 800;
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 0 12px #00aaff,
+        0 0 24px #0066ff;
+}
+
+
+.title span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #62dfff;
+
+    font-size: .55em;
+
+    letter-spacing: 9px;
+}
+
+
+/* ---------------------------------
+   HUD
+---------------------------------- */
+
+.hud {
+
+    position: absolute;
+
+    z-index: 5;
+
+    left: 30px;
+    right: 30px;
+    bottom: 22px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-family: monospace;
+
+    font-size: clamp(
+        8px,
+        1.7vw,
+        13px
+    );
+
+    letter-spacing: 1.5px;
+
+    color: rgba(
+        160,
+        225,
+        255,
+        .8
+    );
+}
+
+.status {
+
+    color: #ff624a;
+
+    animation: pulse 1s infinite alternate;
+}
+
+
+@keyframes pulse {
+
+    from {
+        opacity: .35;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
